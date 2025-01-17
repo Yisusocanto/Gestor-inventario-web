@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-sm-6">
+            <h1 class="text-center">Crear usuario</h1>
+            <p class="text-body-warning text-center">{{ error }}</p>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-sm-6">
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="id_username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="id_username" aria-describedby="username" required
+                        name="username" autofocus>
+                </div>
+                <div class="mb-3">
+                    <label for="id_password1" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="id_password1" required name="password1">
+                </div>
+                <div class="mb-3">
+                    <label for="id_password2 class=" form-label">Confirm your password</label>
+                    <input type="password" class="form-control" id="id_password2" required name="password2">
+                </div>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary">Crear Usuario</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+
+{% endblock %}

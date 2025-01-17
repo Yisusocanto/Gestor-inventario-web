@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1 class="text-center">Home</h1>
+        </div>
+    </div>
+
+
+    <div class="row">
+        {% if user.is_authenticated %}
+        <div class="col-md-6  my-5">
+            <div class="card mx-auto" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Productos</h5>
+                    <p class="card-text">Tabla de todos los productos disponibles en el inventario.</p>
+                    <a href="{% url 'productos' %}" class="btn btn-primary">Ir a Productos</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 my-5">
+            <div class="card mx-auto" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Ventas</h5>
+                    <p class="card-text">Tabla de todas las ventas realizadas de los productos.</p>
+                    <a href="{% url 'ventas' %}" class="btn btn-primary">Ir a Ventas</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card mx-auto" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Crear Producto</h5>
+                    <p class="card-text">Formulario que permite ingresar nuevos productos al inventario (disponible solo para administradores y almacenistas).</p>
+                    <a href="{% url 'crear_producto' %}" class="btn btn-primary">Crear un Producto</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card mx-auto" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Notificaciones</h5>
+                    <p class="card-text">Panel de notificaciones.</p>
+                    <a href="#" class="btn btn-primary">Ir a Notificaciones</a>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="col-md-6 my-5">
+            <div class="card mx-auto" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Crear Usuario</h5>
+                    <p class="card-text">Formulario para crear un nuevo usuario.</p>
+                    <a href="{% url 'crear_usuario' %}" class="btn btn-primary">Crear un Usuario</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 my-5">
+            <div class="card mx-auto" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Ingresar</h5>
+                    <p class="card-text">Formulario de validacion para ingresar al gestor de inventario.</p>
+                    <a href="{% url 'ingresar' %}" class="btn btn-primary">Ingresar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    
+
+</div>
+
+
+{% endblock %}

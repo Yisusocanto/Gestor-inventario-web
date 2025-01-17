@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Editar Producto</h1>
+    {{ error }}
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>
+            Editar
+        </button>
+    </form>
+    <button>
+        <a href="{% url 'productos' %}">Cancelar</a>
+    </button>
+{% endblock %}

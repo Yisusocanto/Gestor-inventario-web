@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container mt-5">
+
+        <div class="row justify-content-center">
+            <div class="col-sm-6">
+                <div>
+                    <h1 class="text-center">Ingresar</h1>
+                </div>
+                <div>
+                    <p class="text-center">{{ error }}</p>
+                </div>
+            </div> 
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-sm-6">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="id_username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="id_username" aria-describedby="username" required name="username" autofocus>
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="id_password" required name="password">
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">Ingresar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
