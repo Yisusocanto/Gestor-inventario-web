@@ -81,14 +81,28 @@ WSGI_APPLICATION = "GestorInventario.wsgi.application"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 
+'''
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default='DATABASE_URL',
+        default='sqlite:///db.sqlite3',
         #default=os.getenv('DATABASE_URL'),
         conn_max_age=600
     )
 }
+'''
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'gestorinventario',  # nombre de tu base de datos en Render
+        'USER': 'gestorinventario_user',  # usuario de tu base de datos en Render
+        'PASSWORD': 'TVApTtFjWrYGfdp5BGXwQ5ORkPdDZrcN',  # contraseña de tu base de datos en Render
+        'HOST': 'dpg-cu625l8gph6c73c32pkg-a.oregon-postgres.render.com',  # host de tu base de datos en Render
+        'PORT': '5432',
+    }
+}
+
 
 
 # Password validation
