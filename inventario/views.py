@@ -57,7 +57,13 @@ def cerrar_sesion(request):
 @login_required
 def productos(request):
     productos = Producto.objects.all()
-    return render(request, "productos.html", {"productos": productos})
+    ventas_totales = Venta.objects.all()
+    return render(request, "productos.html", {
+        "productos": productos,
+        "totales": len(productos),
+        "agotados": len(productos.filter(cantidad=0)),
+        "ventas_totales": len(ventas_totales)
+        })
 
 @login_required
 @role_required(["admin", "almacenista"])
@@ -79,7 +85,7 @@ def editar_producto(request, producto_id):
     producto = get_object_or_404(Producto, pk=producto_id)
     if request.method == "GET":
         form = ProductoForm(instance=producto)
-        return render(request, "editar_producto.html", {"form": form})
+        return render(request, "editar_producto.html", {"form": form, "producto": producto})
     else:
         form = ProductoForm(request.POST, instance=producto)
         if form.is_valid():
@@ -87,7 +93,7 @@ def editar_producto(request, producto_id):
             return redirect("productos")
         else:
             error = "Los datos no son válidos"
-            return render(request, "editar_producto.html", {"form": form, "error": error})
+            return render(request, "editar_producto.html", {"form": form, "error": error, "producto": producto})
 
 @login_required
 @role_required(["admin", "almacenista"])

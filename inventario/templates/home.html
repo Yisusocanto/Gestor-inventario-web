@@ -2,9 +2,9 @@
 
 {% block content %}
 
-<div class="container my-5">
+<div class="container my-3">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-sm-12 col-md-6">
             <h1 class="text-center">Home</h1>
         </div>
     </div>
@@ -12,8 +12,8 @@
 
     <div class="row">
         {% if user.is_authenticated %}
-        <div class="col-md-6  my-5">
-            <div class="card mx-auto" style="width: 18rem;">
+        <div class="col-sm-12 col-md-6  my-3">
+            <div class="card mx-auto" style="width: 16rem;">
                 <div class="card-body">
                     <h5 class="card-title">Productos</h5>
                     <p class="card-text">Tabla de todos los productos disponibles en el inventario.</p>
@@ -21,8 +21,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 my-5">
-            <div class="card mx-auto" style="width: 18rem;">
+        <div class="col-sm-12 col-md-6 my-3">
+            <div class="card mx-auto" style="width: 16rem;">
                 <div class="card-body">
                     <h5 class="card-title">Ventas</h5>
                     <p class="card-text">Tabla de todas las ventas realizadas de los productos.</p>
@@ -30,8 +30,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="card mx-auto" style="width: 18rem;">
+        <div class="col-sm-12 col-md-6 my-3">
+            <div class="card mx-auto" style="width: 16rem;">
                 <div class="card-body">
                     <h5 class="card-title">Crear Producto</h5>
                     <p class="card-text">Formulario que permite ingresar nuevos productos al inventario (disponible solo para administradores y almacenistas).</p>
@@ -39,8 +39,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="card mx-auto" style="width: 18rem;">
+        <div class="col-sm-12 col-md-6 my-3">
+            <div class="card mx-auto" style="width: 16rem;">
                 <div class="card-body">
                     <h5 class="card-title">Notificaciones</h5>
                     <p class="card-text">Panel de notificaciones.</p>
@@ -49,8 +49,8 @@
             </div>
         </div>
         {% else %}
-        <div class="col-md-6 my-5">
-            <div class="card mx-auto" style="width: 18rem;">
+        <div class="col-sm-12 col-md-6 my-3">
+            <div class="card mx-auto" style="width: 16rem;">
                 <div class="card-body">
                     <h5 class="card-title">Crear Usuario</h5>
                     <p class="card-text">Formulario para crear un nuevo usuario.</p>
@@ -58,8 +58,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 my-5">
-            <div class="card mx-auto" style="width: 18rem;">
+        <div class="col-sm-12 col-md-6 my-3">
+            <div class="card mx-auto" style="width: 16rem;">
                 <div class="card-body">
                     <h5 class="card-title">Ingresar</h5>
                     <p class="card-text">Formulario de validacion para ingresar al gestor de inventario.</p>
